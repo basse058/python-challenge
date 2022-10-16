@@ -13,12 +13,18 @@ with open(csvpath) as csvfile:
     csv_header = next(csvreader)
     #print(f"CSV Header: {csv_header}")
     
-     #find total of profit/loss
-          
+#find total votes
     for row in csvreader:
         totalvotes += 1
-        pltotal += int(row[1])
-        #avgchange
+    
+#Candidates, their 
+        
 
     print("Total Votes: ", totalvotes)
-    print("Total: ", "$",pltotal)
+    print("-------------------------------")
+    #print()
+    #print()
+    #print()
+    print("-------------------------------")
+    print("winner: " , )
+    print("-------------------------------")

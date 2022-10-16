@@ -5,46 +5,37 @@ csvpath = os.path.join( 'Resources', 'budget_data.csv')
 
 pltotal = 0
 totalmo = 0
-avgchange = 0
+avchange = 0
+increase = 0
+decrease = 0
+profit = 0
+AvgDiff = 0
 print ("Financial Analysis")
 print ("-------------------------") 
 with open(csvpath) as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')
     #print(csvreader)
     csv_header = next(csvreader)
-    #print(f"CSV Header: {csv_header}")
-    
-     #find total of profit/loss
-          
+ 
+     #find totals for months and profits/losses        
     for row in csvreader:
         totalmo += 1
         pltotal += int(row[1])
-        #avgchange
-
+    
+    #find average change month-to-month, greatest increase, and greatest decrease
+    for i in range(1,(profit)):
+        avchange == (profit[i] - profit[i-1])
+        AvgDiff = sum(avchange)/len(avchange)
+        increase = max(avchange)
+        decrease = min(avchange)
+    
+     #print    
     print("Total Months: ", totalmo)
-    print("Total: ", "$",pltotal)
-    #print("Average Change: ", )
-    #print("Greatest Increase in Profits: ", )
-    #print("Greatest Decrease in Profits: ", )
+    print("Total: $", pltotal)
+    print("Average Change: ", AvgDiff)
+    print("Greatest Increase in Profits: ", increase)
+    print("Greatest Decrease in Profits: ", decrease)
 
-
-
-#print (Totalsum)
-
-#print (str(len(row[0])))
-
-
-
-#def print_percentages(finance_data):
-#    date = str(finance_data[0])
-#     = int(finance_data[1])
-
-
-#print(f"Total Months: {date}" )
-#print(f"Total: {}")
-#print(f"Average Change: {Average}")
-#print(f"Greatest Increase in Profits: {}")
-#print(f"Greatest Decrease in Profits: {}")
 
 
 #The total number of months included in the dataset
